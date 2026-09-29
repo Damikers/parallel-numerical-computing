@@ -1,0 +1,13 @@
+name: C and C++ tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  openmp-smoke-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run correctness checks
+        run: make test
